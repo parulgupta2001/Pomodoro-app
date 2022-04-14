@@ -1,0 +1,15 @@
+.functional-btn{
+    width:4rem;
+    height:2rem;
+}
+
+.management-container{
+    background-color:var(--primary-color);                                                    
+    margin-top: 12rem;
+    display: flex;
+    row-gap: 2rem;
+    flex-direction: column;
+    height:auto;
+    margin:12rem 2rem 2rem 2rem;
+    padding: 1rem;
+}
