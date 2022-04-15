@@ -1,0 +1,12 @@
+.eachItem{
+    height:1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showItem{
+    display:flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
