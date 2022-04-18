@@ -5,7 +5,7 @@ import { GrEdit } from "react-icons/gr";
 import { v4 as uuid } from "uuid";
 import "./task.css";
 
-export function Task() {
+export function Task(prop) {
   const [inputData, setInputData] = useState("");
   const [tasks, setTasks] = useState([]);
   const [editTask, setEditTask] = useState("");
@@ -41,7 +41,7 @@ export function Task() {
   }, [tasks]);
 
   return (
-    <>
+    <div style={{ display: prop.value }}>
       <div className="task-container">
         <div className="add-task">
           <input
@@ -91,6 +91,6 @@ export function Task() {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }

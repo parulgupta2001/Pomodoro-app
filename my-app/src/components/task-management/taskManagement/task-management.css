@@ -5,11 +5,11 @@
 
 .management-container{
     background-color:var(--primary-color);                                                    
-    margin-top: 12rem;
+    /* margin-top: 12rem; */
     display: flex;
     row-gap: 2rem;
     flex-direction: column;
     height:auto;
-    margin:12rem 2rem 2rem 2rem;
+    margin:0rem 2rem 2rem 2rem;
     padding: 1rem;
 }
