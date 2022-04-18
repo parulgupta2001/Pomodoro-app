@@ -1,17 +1,21 @@
-import { useState } from "react";
-import { Timer } from "../../timer/Timer";
+import { useEffect, useState } from "react";
 
 export function Settings(prop) {
-  const [timer, setTimer] = useState({});
+  const [timer, setTimer] = useState({ focus: 0, break: 0 });
+  const [focus, setFocus] = useState(0);
+  const [breaks, setbreaks] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem("time", JSON.stringify(timer));
+  }, [timer]);
+
   return (
     <div style={{ display: prop.value }}>
       <div>
         Focus:
         <input
           type="number"
-          onChange={(e) =>
-            setTimer({ ...timer, focus: Number(e.target.value) })
-          }
+          onChange={(e) => setFocus(Number(e.target.value))}
         />
         mins
       </div>
@@ -20,9 +24,7 @@ export function Settings(prop) {
         Break:
         <input
           type="number"
-          onChange={(e) =>
-            setTimer({ ...timer, break: Number(e.target.value) })
-          }
+          onChange={(e) => setbreaks(Number(e.target.value))}
         />
         mins
       </div>
@@ -30,7 +32,7 @@ export function Settings(prop) {
       <div>
         <button
           onClick={() => {
-            <Timer value={timer} />;
+            setTimer({ focus: focus, break: breaks });
           }}
         >
           Start Focusing

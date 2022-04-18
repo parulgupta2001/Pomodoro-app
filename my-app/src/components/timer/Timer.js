@@ -1,13 +1,17 @@
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { useState } from "react";
+import { useTimer } from "../../contexts/timer-context";
 
-function Timer(prop) {
+function Timer() {
+  const { time } = useTimer();
   const [isFocus, setIsFocus] = useState(true);
   const [isBreak, setIsBreak] = useState(false);
 
   const renderTime = ({ remainingTime }) => {
-    const minutes = Math.floor(remainingTime / 60);
-    const seconds = remainingTime % 60;
+    const addZero = (num) => (num < 10 ? "0" + num : num);
+    const minutes = addZero(Math.floor(remainingTime / 60));
+    const seconds = addZero(remainingTime % 60);
+    document.title = `Pomodoro - ${minutes}:${seconds}`;
 
     return (
       <div>
@@ -23,7 +27,7 @@ function Timer(prop) {
       {isFocus && (
         <CountdownCircleTimer
           isPlaying
-          duration={prop.value.focus}
+          duration={time.focus * 60}
           colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
           colorsTime={[7, 5, 2, 0]}
           onComplete={() => {
@@ -38,7 +42,7 @@ function Timer(prop) {
       {isBreak && (
         <CountdownCircleTimer
           isPlaying
-          duration={prop.value.break}
+          duration={time.break * 60}
           colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
           colorsTime={[7, 5, 2, 0]}
           onComplete={() => {
