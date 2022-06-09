@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import {useTimer} from '../../../contexts/timer-context'
 
 export function Settings(prop) {
-  const [timer, setTimer] = useState({ focus: 0, break: 0 });
+  const {time, setTime} = useTimer()
   const [focus, setFocus] = useState(0);
   const [breaks, setbreaks] = useState(0);
 
-  useEffect(() => {
-    localStorage.setItem("time", JSON.stringify(timer));
-  }, [timer]);
+  const assignTime = () => {
+    setTime({focus: focus, break: breaks})
+  }
 
   return (
     <div style={{ display: prop.value }}>
@@ -31,9 +32,7 @@ export function Settings(prop) {
 
       <div>
         <button
-          onClick={() => {
-            setTimer({ focus: focus, break: breaks });
-          }}
+          onClick={assignTime}
         >
           Start Focusing
         </button>
