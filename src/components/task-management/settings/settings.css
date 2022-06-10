@@ -1,0 +1,28 @@
+.focus_btn{
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.2rem;
+    color:var(--btn-text-color);
+    width:8rem;
+    height:2rem;
+    font-size: 1rem;
+    cursor:pointer;
+}
+
+.setting_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.focus_btn:hover{
+    background-color: var(--secondary-color);
+}
+
+.focus_container,.break_container{
+    color:#a70000;
+    font-weight: 700;
+    display: flex;
+    column-gap: 0.2rem;
+}

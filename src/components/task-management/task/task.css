@@ -10,3 +10,22 @@
     flex-direction: column;
     row-gap: 1rem;
 }
+
+.add_task input{
+    width:20rem;
+    height:1.5rem;
+    border:2px solid var(--primary-color);
+}
+
+.update_btn{
+    color:var(--btn-text-color);
+    background-color:var(--primary-color);
+    border:none;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+}
+
+.update_container{
+    display: flex;
+    column-gap: 0.2rem;
+}

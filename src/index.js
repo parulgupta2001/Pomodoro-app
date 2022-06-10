@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { TimerProvider } from "./contexts/timer-context";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <TimerProvider>
       <App />
     </TimerProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -1,12 +1,14 @@
-.home-container{
+.home_container{
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
 }
 
-.website-name{
-    font-weight: bolder;
-    font-size:3rem;
-    color:#6ebf8b;
-    padding:2rem;
+.user{
+    margin: 0 3rem;
+}
+
+.timer{
+    display: flex;
+    justify-content: center;
 }

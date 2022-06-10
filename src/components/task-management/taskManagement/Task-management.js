@@ -8,16 +8,16 @@ function TaskManagement() {
   const [display, setDisplay] = useState({ tasks: true, settings: "none" });
 
   return (
-    <div className="management-container">
-      <div className="functional-container">
+    <div className="management_container">
+      <div className="functional_container">
         <button
-          className="functional-btn "
+          className="functional_btn "
           onClick={() => setDisplay({ tasks: true, settings: "none" })}
         >
           Tasks
         </button>
         <button
-          className="functional-btn "
+          className="functional_btn "
           onClick={() => setDisplay({ tasks: "none", settings: true })}
         >
           Settings

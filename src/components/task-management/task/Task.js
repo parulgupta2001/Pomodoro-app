@@ -42,8 +42,8 @@ export function Task(prop) {
 
   return (
     <div style={{ display: prop.value }}>
-      <div className="task-container">
-        <div className="add-task">
+      <div>
+        <div className="add_task">
           <input
             type="text"
             placeholder="Add Tasks..."
@@ -60,12 +60,12 @@ export function Task(prop) {
                 <h3>{task}</h3>
 
                 {isEdit && (
-                  <div>
+                  <div className="update_container">
                     <input
                       type="text"
                       onChange={(e) => setEditTask(e.target.value)}
                     />
-                    <button
+                    <button className="update_btn"
                       type="submit"
                       title="Update Task"
                       onClick={() => updateHandler(id)}
@@ -75,7 +75,7 @@ export function Task(prop) {
                   </div>
                 )}
                 {!isEdit && (
-                  <div className="icon-container">
+                  <div>
                     <CgTrash
                       title="Delete Task"
                       onClick={() => deleteClickHandler(id)}
